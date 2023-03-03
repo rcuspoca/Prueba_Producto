@@ -1,0 +1,20 @@
+<div class="body">
+    <div class="login">
+        <form [formGroup]="formulario" (ngSubmit)="Validar()">
+        <h1>Login</h1>
+        <!-- <div mat-form-field class="ancho" appearance="fill">
+            <div mat-label>Usuario</div> -->
+        <mat-form-field appearance="fill">
+            <mat-label>Usuario</mat-label>
+            <input matInput formControlName ="usuario" autocomplete="off">
+        </mat-form-field>
+        <!-- </div> -->
+        <mat-form-field class="ancho" mappearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName ="contrasena" autocomplete="off" type="password">
+        </mat-form-field>
+        <br>
+        <button class="button" mat-raised-button color="primary" type="submit">Validar</button>
+    </form>
+    </div>
+</div> 

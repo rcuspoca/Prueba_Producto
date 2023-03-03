@@ -1,0 +1,51 @@
+<p>frm-productos works!</p>
+<div class="container-modal">
+    <ng-container *ngIf="servicioProducto">        
+      <h2 mat-dialog-title>
+        <h3>
+          <strong>
+            <ng-container *ngIf="servicioProducto.formData.idProducto == 0; else plantillaEditar">
+              Crear Producto
+            </ng-container>
+        </strong>
+      </h3>
+    </h2>
+     
+      <div mat-dialog-content class="padding-bottom">
+        <form #formControl="ngForm" novalidate autocomplete="off">
+          <input type="hidden" name="id" [(ngModel)]="servicioProducto.formData.idProducto" [value]="servicioProducto.formData.idProducto"/>
+          <mat-form-field>
+            <textarea matInput #inputnombre
+              class="form-control"
+              placeholder="Nombre Variable"
+              [(ngModel)]="servicioProducto.formData.nombreProducto"
+              name="nombre"
+              minlength="4"
+              maxlength="45"
+              oninput="this.value = this.value.toUpperCase()"
+              (keypress)= "validarLetrasNumerosEspacios($event)"
+              required
+            ></textarea>
+            <mat-error *ngIf="formControl.invalid">
+              {{ getErrorMessage() }}
+            </mat-error>                       
+          </mat-form-field>
+ 
+          
+        </form>
+    </div >
+      <mat-dialog-actions>
+        <button mat-raised-button type="submit" [disabled]="!formControl.valid" color="primary" 
+            [mat-dialog-close]="true" (click)="guardarProducto(formControl)">
+          Guardar
+        </button>
+        <button mat-raised-button (click)="cancelarOperacion(formControl)" color="primary" tabindex="-1">
+          Cancelar
+        </button>
+      </mat-dialog-actions>
+    </ng-container>
+  </div>
+  
+  <ng-template #plantillaEditar>
+    Modificar Variable
+  </ng-template>
