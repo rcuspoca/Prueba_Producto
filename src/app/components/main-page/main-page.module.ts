@@ -9,19 +9,21 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GestionProductoComponent } from './gestion-producto/gestion-producto.component';
 import { GestionClienteComponent } from './gestion-cliente/gestion-cliente.component';
 import { VentaClientesComponent } from './venta-clientes/venta-clientes.component';
-
+import { FrmProductosComponent } from './gestion-producto/frm-productos/frm-productos.component';
+import { LoginComponent } from '../login/login.component';
 
 @NgModule({
   declarations: [
-    MainPageComponent,   
+    MainPageComponent,
     BoardComponent,
     NavbarComponent,
     GestionProductoComponent,
     GestionClienteComponent,
-    VentaClientesComponent,    
+    VentaClientesComponent,
+    FrmProductosComponent,
+    LoginComponent
   ],
   imports: [
-    CommonModule,
     MainPageRoutingModule,
     SharedModule
   ]

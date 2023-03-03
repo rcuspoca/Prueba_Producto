@@ -14,20 +14,16 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule} from '@angular/material/sort';
 
 //Reactive
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatCardModule} from '@angular/material/card';
 import { UtilitiesComponent } from './utilities/utilities.component';
-import { FrmProductosComponent } from '../main-page/gestion-producto/frm-productos/frm-productos.component';
-
-
 
 @NgModule({
   declarations: [
     DialogComponent,
     UtilitiesComponent,
-    FrmProductosComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +39,9 @@ import { FrmProductosComponent } from '../main-page/gestion-producto/frm-product
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
-    MatCardModule,      
+    MatCardModule,
+    ReactiveFormsModule,
+    FormsModule
    ],
   exports: [
     CommonModule,
@@ -60,8 +58,9 @@ import { FrmProductosComponent } from '../main-page/gestion-producto/frm-product
     MatSortModule,
     MatDialogModule,
     MatCardModule,
-    DialogComponent,   
-
+    DialogComponent,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SharedModule { }
